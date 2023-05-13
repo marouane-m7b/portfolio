@@ -1,0 +1,42 @@
+[
+  {
+    "icon": "<i class='fa-brands fa-html5'></i>",
+    "level": "90",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  },
+  {
+    "icon": "<i class='fa-brands fa-css3-alt'></i>",
+    "level": "80",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  },
+  {
+    "icon": "<i class='fa-brands fa-js'></i>",
+    "level": "65",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  },
+  {
+    "icon": "<i class='fa-brands fa-php'></i>",
+    "level": "1",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  },
+  {
+    "icon": "<i class='fa-solid fa-database'></i>",
+    "level": "1",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  },
+  {
+    "icon": "<i class='fa-brands fa-react'></i>",
+    "level": "1",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  },
+  {
+    "icon": "<i class='fa-brands fa-python'></i>",
+    "level": "50",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  },
+  {
+    "icon": "<i class='fa-brands fa-git-alt'></i>",
+    "level": "30",
+    "learned":["Tables","Semantic Elements","Forms","SomeThing Else"]
+  }
+]

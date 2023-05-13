@@ -1,0 +1,573 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+:root {
+  --primary-color: #ff5a5f;
+  --secondary-color: #0075ff;
+  --accent-color: #fcb711;
+  --background-color: #f2f2f2;
+  --text-color: #333333;
+  --main-transition: 300ms;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  scroll-behavior: smooth;
+}
+*,
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+a {
+  text-decoration: none;
+  background-color: inherit;
+}
+ul li {
+  list-style: none;
+}
+.scroller {
+  background-color: var(--secondary-color);
+  width: 0;
+  height: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--background-color);
+  background-image: -webkit-linear-gradient(
+    90deg,
+    var(--accent-color) 0%,
+    var(--secondary-color) 80%
+  );
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
+/* ------------------------------------- */
+/* ------------ Start Header ----------- */
+/* ------------------------------------- */
+.header {
+  position: fixed;
+  height: 100vh;
+  right: 0;
+  z-index: 5;
+  transition: var(--main-transition);
+}
+.header ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 0 30px;
+}
+.header ul li a {
+  background: var(--secondary-color);
+  width: 50px;
+  height: 50px;
+  position: relative;
+  color: #f2f2f2;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header ul li a:hover {
+  overflow: visible;
+}
+.header ul li a[title]::after {
+  content: attr(title);
+  position: absolute;
+  top: 7px;
+  left: 0;
+  background-color: var(--secondary-color);
+  display: grid;
+  place-items: center;
+  padding: 0px 15px;
+  transition: var(--main-transition);
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
+.header ul li a[title]:hover::after {
+  left: -110px;
+  width: 100px;
+  height: fit-content;
+}
+/* ------------------------------------- */
+/* ----------- Start Landing ----------- */
+/* ------------------------------------- */
+.landing {
+  background-color: var(--background-color);
+}
+.landing .container {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing .info {
+  padding: 50px 20px;
+  color: var(--text-color);
+  width: 100%;
+}
+.landing .info .name,
+.landing .info .hello {
+  text-transform: capitalize;
+  padding: 0px 0;
+  font-size: 40px;
+}
+.landing .info .name h2 {
+  display: inline;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.landing .info .what-i-do {
+  padding: 15px 0;
+  font-size: 25px;
+}
+.landing .info .who-im {
+  text-transform: uppercase;
+  padding: 15px 0;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.landing .info .cv {
+  display: grid;
+  background-color: var(--secondary-color);
+  width: 200px;
+  max-width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  place-items: center;
+}
+@media screen and (max-width: 767px) {
+  .landing .info {
+    width: 80%;
+  }
+  .landing .info .cv {
+    margin: auto;
+  }
+  .landing .info .name,
+  .landing .info .hello {
+    font-size: 30px;
+  }
+  .landing .info .name h2 {
+    font-size: 30px;
+  }
+  .landing .info .what-i-do {
+    font-size: 21px;
+  }
+  .landing .info .who-im {
+    font-size: 17px;
+  }
+}
+.landing .info .cv a {
+  color: #f2f2f2;
+  font-weight: bold;
+}
+.landing .img img {
+  z-index: 2;
+  border-radius: 0% 100% 15% 85% / 85% 0% 100% 15%;
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .landing .img {
+    display: none;
+  }
+}
+
+/* ------------------------------------- */
+/* ------------ Start Skills ----------- */
+/* ------------------------------------- */
+.learned {
+  width: 100%;
+}
+.learned .container .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.skill-progress {
+  width: 160px;
+  height: 160px;
+  min-width: 20%;
+  position: relative;
+}
+.skill-progress .skill-outer {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px 1px rgba(255, 255, 255, 0.7);
+}
+.skill-progress .skill-inner {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+.skill-progress .skill-inner svg {
+  font-weight: bold;
+  font-size: 80px;
+  color: var(--secondary-color);
+}
+
+.learned .skill-progress > svg > circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: calc(20px - 10px);
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: progress1 2s linear forwards;
+  -webkit-animation: progress1 2s linear forwards;
+}
+.learned .skill-progress > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes progress0 {
+  100% {
+    stroke-dashoffset: 472;
+  }
+}
+@keyframes progress1 {
+  100% {
+    stroke-dashoffset: 471;
+  }
+}
+@keyframes progress5 {
+  100% {
+    stroke-dashoffset: 448;
+  }
+}
+@keyframes progress10 {
+  100% {
+    stroke-dashoffset: 425;
+  }
+}
+@keyframes progress15 {
+  100% {
+    stroke-dashoffset: 401;
+  }
+}
+@keyframes progress20 {
+  100% {
+    stroke-dashoffset: 378;
+  }
+}
+@keyframes progress25 {
+  100% {
+    stroke-dashoffset: 354;
+  }
+}
+@keyframes progress30 {
+  100% {
+    stroke-dashoffset: 330;
+  }
+}
+@keyframes progress35 {
+  100% {
+    stroke-dashoffset: 307;
+  }
+}
+@keyframes progress40 {
+  100% {
+    stroke-dashoffset: 283;
+  }
+}
+@keyframes progress45 {
+  100% {
+    stroke-dashoffset: 260;
+  }
+}
+@keyframes progress50 {
+  100% {
+    stroke-dashoffset: 236;
+  }
+}
+@keyframes progress55 {
+  100% {
+    stroke-dashoffset: 212;
+  }
+}
+@keyframes progress60 {
+  100% {
+    stroke-dashoffset: 189;
+  }
+}
+@keyframes progress65 {
+  100% {
+    stroke-dashoffset: 165.2;
+  }
+}
+@keyframes progress70 {
+  100% {
+    stroke-dashoffset: 141;
+  }
+}
+@keyframes progress75 {
+  100% {
+    stroke-dashoffset: 117;
+  }
+}
+@keyframes progress80 {
+  100% {
+    stroke-dashoffset: 94;
+  }
+}
+@keyframes progress85 {
+  100% {
+    stroke-dashoffset: 71;
+  }
+}
+@keyframes progress90 {
+  100% {
+    stroke-dashoffset: 47;
+  }
+}
+@keyframes progress95 {
+  100% {
+    stroke-dashoffset: 24;
+  }
+}
+@keyframes progress100 {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* ------------------------------------- */
+/* ------------ Start Langs ------------ */
+/* ------------------------------------- */
+.langs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+.lang {
+  min-width: 200px;
+}
+.lang h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lang h3 span {
+  font-size: 12px;
+  border: 1px solid var(--secondary-color);
+  padding: 1px 8px;
+  border-radius: 4px;
+  color: var(--text-color);
+}
+.lang .the-progress {
+  height: 10px;
+  background-color: var(--background-color);
+  position: relative;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.lang .the-progress span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: rgb(0, 166, 153);
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color) 0%,
+    var(--secondary-color) 50%,
+    var(--accent-color) 100%
+  );
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  transition: 5s;
+  -webkit-transition: 5s;
+  -moz-transition: 5s;
+  -ms-transition: 5s;
+  -o-transition: 5s;
+}
+/* ------------------------------------- */
+/* ----------- Start Projects ---------- */
+/* ------------------------------------- */
+.projects {
+  background-color: var(--background-color);
+}
+.projects .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  width: 80%;
+}
+.projects .container a {
+  position: relative;
+  width: 32%;
+  min-width: 100px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  border: 5px solid var(--secondary-color);
+  overflow: hidden;
+}
+.projects .container a:hover img {
+  transform: scale(1.1) rotate(1deg);
+  -webkit-transform: scale(1.1) rotate(1deg);
+  -moz-transform: scale(1.1) rotate(1deg);
+  -ms-transform: scale(1.1) rotate(1deg);
+  -o-transform: scale(1.1) rotate(1deg);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.projects .container a::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  opacity: 0.5;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.projects .container a:hover::before {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+}
+.projects .container img {
+  width: 100%;
+}
+
+
+.education .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 80%;
+  min-height: 100vh;
+  justify-content: center;
+}
+.education .container .steps {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.education .steps .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  color: #999;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #e0e0e0;
+  transition: all 200ms ease;
+  transition-delay: 0s;
+}
+.education .steps .circle.active {
+  transition-delay: 100ms;
+  border-color: #4070f4;
+  color: #4070f4;
+}
+.education .steps .progress-bar {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #e0e0e0;
+  z-index: -1;
+}
+.education .progress-bar .indicator {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background: #4070f4;
+  transition: all 300ms ease;
+}
+.education .container .buttons {
+  display: flex;
+  gap: 20px;
+}
+.education .buttons button {
+  padding: 8px 25px;
+  background: #4070f4;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transition: all 200ms linear;
+}
+.education .buttons button:active {
+  transform: scale(0.97);
+}
+.education .buttons button:disabled {
+  background: #87a5f8;
+  cursor: not-allowed;
+}
