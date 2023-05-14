@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/lightbox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <div class="scroller"></div>
@@ -31,12 +39,12 @@
           </a>
         </li>
         <li>
-          <a href="#" title="Experience">
+          <a href="#experience" title="Experience">
             <i class="fa-solid fa-business-time"></i>
           </a>
         </li>
         <li>
-          <a title="Contact" href="#" id="darkMode">
+          <a href="#contact" title="Contact">
             <i class="fa-regular fa-comment"></i>
           </a>
         </li>
@@ -45,22 +53,52 @@
     <div class="landing" id="about">
       <div class="container">
         <div class="info">
-          <div class="hello">hello!</div>
-          <div class="name">
-            i'm
-            <h2>marouane mahboub</h2>
+          <div class="hello animate__animated wow animate__fadeInDown">
+            hello!
           </div>
-          <h3 class="what-i-do"><span class="job"></span></h3>
-          <h3 class="who-im">
+          <div class="name">
+            <span class="hello animate__animated wow animate__fadeInLeft"
+              >i'm</span
+            >
+            <h2
+              class="animate__animated wow animate__fadeInRight"
+              data-wow-delay="500ms"
+              data-wow-duration="1000ms"
+            >
+              marouane mahboub
+            </h2>
+          </div>
+          <h3
+            class="what-i-do animate__animated wow animate__fadeInRight"
+            data-wow-delay="800ms"
+            data-wow-duration="1300ms"
+          >
+            <span class="job"></span>
+          </h3>
+          <h3
+            class="who-im animate__animated wow animate__fadeIn"
+            data-wow-delay="1500ms"
+            data-wow-duration="2000ms"
+          >
             incidunt ducimus, numquam quasi quo. Vel architecto dolorum porro
             reprehenderit, voluptatem adipisci illo, odio esse ab rem quod
             voluptates! Sed quas, nihil neque officia? Voluptates iure velit
             ipsa unde? Et iusto velit deleniti molestiae laborum fugiat dolore
             quidem beatae praesentium.
           </h3>
-          <div class="cv"><a href="#">Download CV</a></div>
+          <div
+            class="cv animate__animated wow animate__jackInTheBox"
+            data-wow-delay="1700ms"
+            data-wow-duration="2300ms"
+          >
+            <a href="#">Download CV</a>
+          </div>
         </div>
-        <div class="img">
+        <div
+          class="img animate__animated wow animate__fadeIn"
+          data-wow-delay="1500ms"
+          data-wow-duration="2000ms"
+        >
           <img src="images/person.png" alt="" />
         </div>
       </div>
@@ -75,25 +113,19 @@
       <div class="container"></div>
     </div>
     <div class="education" id="education">
-      <div class="container">
-        <div class="steps">
-          <span class="circle active">1</span>
-          <span class="circle">2</span>
-          <span class="circle">3</span>
-          <span class="circle">4</span>
-          <div class="progress-bar">
-            <span class="indicator"></span>
-          </div>
-        </div>
-        <div class="buttons">
-          <button id="prev" disabled>Prev</button>
-          <button id="next">Next</button>
-        </div>
-      </div>
+      <div class="container"></div>
     </div>
-
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <div class="experience" id="experience">
+      <div class="container"></div>
+    </div>
+    <div class="contact" id="contact">
+      <div class="container"></div>
+    </div>
     <script src="js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 let typing = new Typed(".job", {
   strings: [
-    "أنا مبرمج",
     "I'm a developer",
+    "أنا مبرمج",
     "Je suis un développeur",
     "Soy un desarrollador",
     "Ich bin ein Entwickler",
@@ -11,6 +11,8 @@ let typing = new Typed(".job", {
   backSpeed: 100,
   loop: true,
 });
+
+new WOW().init();
 
 let el = document.querySelector(".scroller");
 let height =
@@ -48,7 +50,9 @@ function getSkills() {
       shuffle(mySkills);
       for (let i = 0; i < mySkills.length; i++) {
         skills.firstElementChild.firstElementChild.innerHTML += `
-        <div class="skill-progress">
+        <div class="skill-progress animate__animated wow animate__fadeInDown" data-wow-delay="${
+          i * 0.1
+        }s"  data-wow-duration="2000ms">
         <div class="skill-outer">
           <div class="skill-inner">${mySkills[i]["icon"]}</div>
         </div>
@@ -101,10 +105,14 @@ function getLangs() {
       shuffle(myLangs);
       for (let i = 0; i < myLangs.length; i++) {
         skills.firstElementChild.lastElementChild.innerHTML += `
-        <div class="lang">
+        <div class="lang animate__animated wow animate__fadeInLeft" data-wow-delay="${
+          (i + 1) * 0.2
+        }s"  data-wow-duration="2500ms">
         <h3>${myLangs[i].name} <span>${myLangs[i].level}</span></h3>
         <div class="the-progress">
-          <span style="width: ${myLangs[i].level}" data-width = " ${myLangs[i].level}"></span>
+          <span style="width: ${myLangs[i].level}" data-width = " ${
+          myLangs[i].level
+        }"></span>
         </div>
       </div>`;
       }
@@ -151,54 +159,35 @@ function getProjects() {
       shuffle(myProjects);
       for (let i = 0; i < 6; i++) {
         document.querySelector(".projects .container").innerHTML += `
-        <a href="https://marwane-m7b.github.io/${myProjects[i].name}/" target="_blank"><img src="https://api.screenshotmachine.com?key=e10806&url=https://marwane-m7b.github.io/${myProjects[i].name}/&dimension=1024x768" alt="" id="website-img1"></a>
+        <a  class="hello animate__animated wow animate__backInUp"
+        href="https://api.screenshotmachine.com?key=e10806&url=https://marwane-m7b.github.io/${
+          myProjects[i].name
+        }/&dimension=1024x768"
+        data-lightbox="image_prog" data-title="Show Project"
+        data-wow-delay="${(i + 1) * 0.1}s"
+        data-wow-duration="2000ms">
+          <img src="https://api.screenshotmachine.com?key=e10806&url=https://marwane-m7b.github.io/${
+            myProjects[i].name
+          }/&dimension=1024x768" alt="" id="website-img1">
+        </a>
         `;
       }
+      document.addEventListener("click", (e) => {
+        if (e.target.className == "lb-caption") {
+          window.open(
+            e.target.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.src.match(
+              /https:\/\/marwane-m7b.github.io\/[a-zA-Z0-9-_]+\//i
+            )[0]
+          );
+          // setTimeout(function () {
+          //   newTab.close();
+          // }, 5000);
+        }
+      });
     }
   };
   myRequest.open("GET", "https://api.github.com/users/marwane-m7b/repos", true);
   myRequest.send();
 }
 
-getProjects();
-
-function educationBar() {
-  //DOM Elements
-  const circles = document.querySelectorAll(".circle"),
-    progressBar = document.querySelector(".indicator"),
-    buttons = document.querySelectorAll("button");
-
-  let currentStep = 1;
-
-  // function that updates the current step and updates the DOM
-  const updateSteps = (e) => {
-    // update current step based on the button clicked
-    currentStep = e.target.id === "next" ? ++currentStep : --currentStep;
-
-    // loop through all circles and add/remove "active" class based on their index and current step
-    circles.forEach((circle, index) => {
-      circle.classList[`${index < currentStep ? "add" : "remove"}`]("active");
-    });
-
-    // update progress bar width based on current step
-    progressBar.style.width = `${
-      ((currentStep - 1) / (circles.length - 1)) * 100
-    }%`;
-
-    // check if current step is last step or first step and disable corresponding buttons
-    if (currentStep === circles.length) {
-      buttons[1].disabled = true;
-    } else if (currentStep === 1) {
-      buttons[0].disabled = true;
-    } else {
-      buttons.forEach((button) => (button.disabled = false));
-    }
-  };
-
-  // add click event listeners to all buttons
-  buttons.forEach((button) => {
-    button.addEventListener("click", updateSteps);
-  });
-}
-
-educationBar();
+// getProjects();
