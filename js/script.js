@@ -190,4 +190,4 @@ function getProjects() {
   myRequest.send();
 }
 
-// getProjects();
+getProjects();
