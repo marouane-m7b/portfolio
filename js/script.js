@@ -160,13 +160,13 @@ function getProjects() {
       for (let i = 0; i < 6; i++) {
         document.querySelector(".projects .container").innerHTML += `
         <a  class="hello animate__animated wow animate__backInUp"
-        href="https://api.screenshotmachine.com?key=e10806&url=https://marwane-m7b.github.io/${
+        href="https://api.screenshotmachine.com?key=e10806&url=https://marouane-m7b.github.io/${
           myProjects[i].name
         }/&dimension=1024x768"
         data-lightbox="image_prog" data-title="Show Project"
         data-wow-delay="${(i + 1) * 0.1}s"
         data-wow-duration="2000ms">
-          <img src="https://api.screenshotmachine.com?key=e10806&url=https://marwane-m7b.github.io/${
+          <img src="https://api.screenshotmachine.com?key=e10806&url=https://marouane-m7b.github.io/${
             myProjects[i].name
           }/&dimension=1024x768" alt="" id="website-img1">
         </a>
@@ -176,7 +176,7 @@ function getProjects() {
         if (e.target.className == "lb-caption") {
           window.open(
             e.target.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.src.match(
-              /https:\/\/marwane-m7b.github.io\/[a-zA-Z0-9-_]+\//i
+              /https:\/\/marouane-m7b.github.io\/[a-zA-Z0-9-_]+\//i
             )[0]
           );
           // setTimeout(function () {
@@ -186,7 +186,7 @@ function getProjects() {
       });
     }
   };
-  myRequest.open("GET", "https://api.github.com/users/marwane-m7b/repos", true);
+  myRequest.open("GET", "https://api.github.com/users/marouane-m7b/repos", true);
   myRequest.send();
 }
 
